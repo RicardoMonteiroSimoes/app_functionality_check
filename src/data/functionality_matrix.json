@@ -1,0 +1,263 @@
+{
+    "tooltips": {
+      "1": "min. Android 6, Chromium 66",
+      "2": "Certificate has to be installed manually",
+      "3": "Only with SplineApp 1.9",
+      "4": "Not avaliable when using remote connection (OpenVPN)",
+      "5": "Has do deactivate \"Download design and load locally\"",
+      "6": "Needs to manually adapt Asterisk WebSocket path"
+    },
+    "functionMatrix": {
+      "header": [
+        "Device",
+        "App 3.8",
+        "Secured",
+        "VPN",
+        "Notification",
+        "Talk",
+        "ReVisu 3"
+      ],
+      "devices": [
+        {
+          "OS": "SplinePanel",
+          "functions": [
+            {
+              "status": true
+            },
+            {
+              "status": true
+            },
+            {
+              "status": false
+            },
+            {
+              "status": false
+            },
+            {
+              "status": true
+            },
+            {
+              "status": true
+            }
+          ]
+        },
+        {
+          "OS": "Sibo",
+          "functions": [
+            {
+              "status": true
+            },
+            {
+              "status": true,
+              "tooltips": [
+                2
+              ]
+            },
+            {
+              "status": false
+            },
+            {
+              "status": false
+            },
+            {
+              "status": true
+            },
+            {
+              "status": true
+            }
+          ]
+        },
+        {
+          "OS": "Zykronix",
+          "functions": [
+            {
+              "status": false
+            },
+            {
+              "status": false
+            },
+            {
+              "status": false
+            },
+            {
+              "status": false
+            },
+            {
+              "status": true,
+              "tooltips":[
+                3
+              ]
+            },
+            {
+              "status": true
+            }
+          ]
+        },
+        {
+          "OS": "Android",
+          "functions": [
+            {
+              "status": true,
+              "tooltips": [
+                1
+              ]
+            },
+            {
+              "status": true,
+              "tooltips": [
+                1
+              ]
+            },
+            {
+              "status": true
+            },
+            {
+              "status": true
+            },
+            {
+              "status": true
+            },
+            {
+              "status": true
+            }
+          ]
+        },
+        {
+          "OS": "iOS",
+          "version": 14.5,
+          "comparison": "<",
+          "functions": [
+            {
+              "status": true
+            },
+            {
+              "status": true,
+              "tooltips": [
+                2
+              ]
+            },
+            {
+              "status": true
+            },
+            {
+              "status": true
+            },
+            {
+              "status": false
+            },
+            {
+              "status": true
+            }
+          ]
+        },
+        {
+          "OS": "iOS",
+          "version": 14.5,
+          "functions": [
+            {
+              "status": true
+            },
+            {
+              "status": true,
+              "tooltips": [
+                2
+              ]
+            },
+            {
+              "status": true
+            },
+            {
+              "status": true
+            },
+            {
+              "status": true
+            },
+            {
+              "status": true
+            }
+          ]
+        },
+        {
+          "OS": "iOS",
+          "version": 15,
+          "comparison": ">=",
+          "functions": [
+            {
+              "status": true
+            },
+            {
+              "status": true
+            },
+            {
+              "status": true
+            },
+            {
+              "status": true
+            },
+            {
+              "status": true,
+              "tooltips": [
+                4
+              ]
+            },
+            {
+              "status": true
+            }
+          ]
+        },
+        {
+          "OS": "Browser",
+          "functions": [
+            {
+              "status": null
+            },
+            {
+              "status": true,
+              "tooltips": [
+                2
+              ]
+            },
+            {
+              "status": null
+            },
+            {
+              "status": false
+            },
+            {
+              "status": true
+            },
+            {
+              "status": true
+            }
+          ]
+        },
+        {
+          "OS": "PixelVisu",
+          "functions": [
+            {
+              "status": true
+            },
+            {
+              "status": false
+            },
+            {
+              "status": false
+            },
+            {
+              "status": true
+            },
+            {
+              "status": true,
+              "tooltips": [
+                3,
+                5
+              ]
+            },
+            {
+              "status": null
+            }
+          ]
+        }
+      ]
+    }
+  }
