@@ -1,21 +1,29 @@
 import './App.css';
 
 
-import functionalityData from './data/functionality_matrix.json';
 
 import React from 'react';
 import { useState, useEffect } from 'react';
 import OsViewer from './components/osViewer/osViewer.component';
 import FunctionalityTable from './components/functionalityTable/functionalityTable.component';
+import Loading from './components/loading/loading.component';
 
 function App() {
 
   const [osData, setOsData] = useState(null);
   const [osIndex, setOsIndex] = useState(null);
+  const [functionalityData, setFunctionalityData] = useState(null)
 
   useEffect(() => {
     getOsData();
+    getFunctionalityData();
   }, []);
+
+  const getFunctionalityData = () => {
+    fetch('https://raw.githubusercontent.com/RicardoMonteiroSimoes/app_functionality_check/main/src/data/functionality_matrix.json')
+    .then(res => res.json())
+    .then(data => setFunctionalityData(data));
+  }
 
   const getOsData = () => {
 
@@ -65,7 +73,7 @@ function App() {
   }, [osData])
 
   useEffect(() => {
-    if (!!osData) {
+    if (!!osData && !!functionalityData) {
       if (osData.os === "Android") {
         setOsIndex(functionalityData.functionMatrix.devices.findIndex(device => device.OS === "Android"));
       } else if (osData.os === "iOS") {
@@ -84,14 +92,12 @@ function App() {
         });
       }
     }
-    console.log('Set highlight index to ')
-    console.log(osIndex)
-    console.log(osData)
-  }, [osData])
-
-
+    console.log(functionalityData);
+  }, [osData, functionalityData])
+  
   return (
-    <>
+      functionalityData?
+      <>
       <OsViewer osData={osData} setOsData={setOsData} />
       <FunctionalityTable functionalityData={functionalityData} osData={osData} highlightIndex={osIndex} />
       <b>Keys:</b>
@@ -100,7 +106,9 @@ function App() {
         <li>❗: Limited functionality, check tooltip for more information</li>
         <li>❌: Function not avaliable on given device</li>
       </ul>
-    </>
+      </>
+      :
+      <Loading text="Fetching functionality data..." />
   );
 }
 
